@@ -113,7 +113,6 @@ switch (Menu)
                 venta.IdCliente = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("ingrese el id del pructo ");
                 venta.IdProducto = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("hay la llevas");
                 venta.Fechapedido = DateTime.Now;
                 Console.WriteLine("Ingrese la cantidad");
                 venta.Cantidad = Convert.ToInt32(Console.ReadLine());
@@ -122,7 +121,7 @@ switch (Menu)
                 venta.Total = total;
 
                 CrudFloristeria.AgregarVenta(venta);
-                Console.WriteLine($"su resultado es {venta.Total}");
+                Console.WriteLine($"su total es {venta.Total}");
                 Console.WriteLine("Se guardo en la base de datos ");
 
 
@@ -174,18 +173,17 @@ switch (Menu)
                 venta.IdCliente = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("ingrese el id del pructo ");
                 venta.IdProducto = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("hay la llevas");
                 venta.Fechapedido = DateTime.Now;
                 Console.WriteLine("Ingrese la cantidad");
                 venta.Cantidad = Convert.ToInt32(Console.ReadLine());
 
+                decimal total = CrudFloristeria.CalcularProducto(producto, venta);
+                venta.Total = total;
 
+                CrudFloristeria.AgregarVenta(venta);
+                Console.WriteLine($"su total es {venta.Total}");
+                Console.WriteLine("Se guardo en la base de datos ");
 
-
-                //CrudFloristeria.CalcularTotal();
-                //CrudFloristeria.AgregarVenta(venta);
-                //Console.WriteLine($"su resultado es {venta.Total}");
-                //Console.WriteLine("Se guardo en la base de datos ");
 
             }
             else
