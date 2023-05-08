@@ -195,7 +195,7 @@ namespace proyectodefinitivo.DAO
                 }
                 catch (DbUpdateException e)
                 {
-                    // Maneja cualquier excepción que se lance al guardar los cambios
+                    ;
                     Console.WriteLine(e);
                 }
             }
